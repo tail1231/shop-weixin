@@ -1,0 +1,42 @@
+/* pages/category/index.wxss */
+page {
+  height: 100%;
+}
+.cates .cates_container {
+  display: flex;
+  /* less中使用calc */
+  height: calc(100vh - 90rpx);
+}
+.cates .cates_container .cates_left {
+  /* 子项高度100% */
+  flex: 2;
+}
+.cates .cates_container .cates_left .menu_item {
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+}
+.cates .cates_container .cates_left .active {
+  color: var(--theme-color);
+  border-left: 5rpx solid currentColor;
+}
+.cates .cates_container .cates_content {
+  /* 子项高度100% */
+  flex: 5;
+}
+.cates .cates_container .cates_content .cates_group .group_title {
+  text-align: center;
+}
+.cates .cates_container .cates_content .cates_group .group_content {
+  display: flex;
+  flex-wrap: wrap;
+}
+.cates .cates_container .cates_content .cates_group .group_content navigator {
+  text-align: center;
+  width: 33.33%;
+}
+.cates .cates_container .cates_content .cates_group .group_content navigator image {
+  width: 50%;
+}
