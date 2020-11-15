@@ -27,7 +27,14 @@ page {
   flex: 5;
 }
 .cates .cates_container .cates_content .cates_group .group_title {
+  padding: 15rpx 0;
   text-align: center;
+}
+.cates .cates_container .cates_content .cates_group .group_title .split {
+  color: #666;
+}
+.cates .cates_container .cates_content .cates_group .group_title .text {
+  margin: 0 10rpx;
 }
 .cates .cates_container .cates_content .cates_group .group_content {
   display: flex;

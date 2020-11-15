@@ -15,43 +15,37 @@ Page({
   // 获取轮播图数据
   getSwiperList() {
     let params = {
-      url: "https://api-hmugo-web.itheima.net/api/public/v1/home/swiperdata",
+      url: "/home/swiperdata",
     };
     request(params).then((res) => {
       console.log("轮播图", res);
-      if (res.statusCode === 200) {
-        this.setData({
-          swiperList: res.data.message,
-        });
-      }
+      this.setData({
+        swiperList: res,
+      });
     });
   },
   // 获取导航分类数据
   getCateList() {
     let params = {
-      url: "https://api-hmugo-web.itheima.net/api/public/v1/home/catitems",
+      url: "/home/catitems",
     };
     request(params).then((res) => {
       console.log("导航", res);
-      if (res.statusCode === 200) {
-        this.setData({
-          cateList: res.data.message,
-        });
-      }
+      this.setData({
+        cateList: res,
+      });
     });
   },
   // 获取楼层数据
   getFloorList() {
     let params = {
-      url: "https://api-hmugo-web.itheima.net/api/public/v1/home/floordata",
+      url: "/home/floordata",
     };
     request(params).then((res) => {
       console.log("楼层", res);
-      if (res.statusCode === 200) {
-        this.setData({
-          floorList: res.data.message,
-        });
-      }
+      this.setData({
+        floorList: res,
+      });
     });
   },
   onReady: function () {},
