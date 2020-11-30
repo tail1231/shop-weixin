@@ -1,2 +1,7 @@
-<!--pages/cart/index.wxml-->
-<text>pages/cart/index.wxml</text>
+<!-- pages/cart/index.wxml -->
+<!-- 收货地址 -->
+<view class="receive_address">
+    <view class="address_btn">
+        <button bindtap="handleGetAddress" type="primary" plain>添加收货地址</button>
+    </view>
+</view>
