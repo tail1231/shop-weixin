@@ -22,7 +22,7 @@
         <view wx:for="{{cart}}" wx:key="{{item.goods_id}}" class="cart_item">
             <!-- 复选框 -->
             <view class="cart_check_wrap">
-                <checkbox-group bindchange="">
+                <checkbox-group data-id="{{item.goods_id}}" bindchange="handleCheckChange">
                     <checkbox checked="{{item.isCheck}}"></checkbox>
                 </checkbox-group>
             </view>
@@ -57,10 +57,10 @@
     <view class="total_price_wrap">
         <view class="total_price">
             合计：
-            <text class="total_price text">¥999</text>
+            <text class="total_price text">¥{{totalPrice}}</text>
         </view>
         <view>包含运费</view>
     </view>
     <!-- 结算 -->
-    <view class="order_pay_wrap">结算(2)</view>
+    <view class="order_pay_wrap">结算({{totalNum}})</view>
 </view>
