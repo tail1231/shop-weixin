@@ -147,10 +147,8 @@ Page({
         allChecked = false
       }
     });
-
     // 判断数组是否为空
     allChecked = !cart.length ? false : allChecked;
-
     // 把购物车数据重新更新到data中和缓存中
     this.setData({
       cart,
