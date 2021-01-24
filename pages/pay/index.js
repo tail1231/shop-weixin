@@ -14,6 +14,10 @@
  *    2.没有则必须先授权，获取到token
  *    3.有token
  *    4.创建订单 获取订单编号
+ *    5.已经完成微信支付
+ *    6.需要手动删除缓存中已经被选中的商品
+ *    7.重新把删除后的购物车数据，更新至缓存中去
+ *    8.再跳转页面
  */
 
 import { request } from "../../request/index";
@@ -95,7 +99,7 @@ Page({
       }
       // 2.创建订单
       // 3.1 准备请求头参数
-      const header = { Authorization: token };
+      // const header = { Authorization: token };
       // 3.2 准备请求体参数
       const order_price = this.data.totalPrice;
       const consignee_addr = this.data.address.all;
@@ -118,7 +122,7 @@ Page({
         url: "/my/orders/create",
         method: "POST",
         data: orderParams,
-        header,
+        // header,
       });
       // 5.准备发起预支付的接口
       const pay = await request({
@@ -127,7 +131,7 @@ Page({
           order_number,
         },
         method: "POST",
-        header,
+        // header,
       });
       // 6.发起支付
       await requestPayment(pay);
@@ -138,10 +142,14 @@ Page({
         data: {
           order_number,
         },
-        header,
+        // header,
       });
       await showToast({ title: "支付成功" });
       console.log(res); // 支付成功
+      // 8.需要手动删除缓存中已经被选中的商品
+      let newCart = wx.getStorageSync("cart");
+      newCart = newCart.filter((v) => !v.isCheck);
+      wx.setStorageSync("cart", newCart);
       // 8.支付成功跳转到订单页
       wx.navigateTo({
         url: "/pages/order/index",
