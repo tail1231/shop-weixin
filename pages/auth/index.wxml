@@ -1,2 +1,2 @@
-<!--pages/auth/index.wxml-->
-<text>pages/auth/index.wxml</text>
+<!-- pages/auth/index.wxml -->
+<button type="primary" open-type="getUserInfo" bindgetuserinfo="handleGetUserInfo">授权</button>
