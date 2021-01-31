@@ -34,7 +34,7 @@ Page({
       const token = await request({
         url: "/users/wxlogin",
         data: loginParams,
-        method: "post",
+        method: "POST",
       });
       console.log(token);
       // 4 把token存入到缓存中，同时跳转回到上一个页面

@@ -1,0 +1,116 @@
+/* pages/user/index.wxss */
+page {
+  background-color: #edece8;
+}
+.user_info_wrap {
+  position: relative;
+  height: 45vh;
+  background-color: var(--theme-color);
+  overflow: hidden;
+  .user_img_wrap {
+    position: relative;
+    .user_bg {
+      height: 50vh;
+      filter: blur(10rpx);
+    }
+    .user_info {
+      position: absolute;
+      left: 50%;
+      top: 20%;
+      transform: translate(-50%);
+      text-align: center;
+      .user_icon {
+        width: 150rpx;
+        height: 150rpx;
+        border-radius: 50%;
+      }
+      .user_name {
+        color: #fff;
+        margin-top: 30rpx;
+        font-size: 44rpx;
+      }
+    }
+  }
+  .user_btn {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 40%;
+    color: greenyellow;
+    padding: 30rpx;
+    border: 1rpx solid greenyellow;
+    border-radius: 5rpx;
+  }
+}
+
+.user_content {
+  position: relative;
+  .user_main {
+    position: absolute;
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -40rpx;
+    padding-bottom: 100rpx;
+    color: #666;
+    .history_wrap {
+      background-color: #fff;
+      display: flex;
+      navigator {
+        flex: 1;
+        text-align: center;
+        padding: 10rpx 0;
+      }
+      .his_num {
+        color: var(--theme-color);
+      }
+    }
+    .orders_wrap {
+      margin-top: 20rpx;
+      background-color: #fff;
+      .orders_title {
+        padding: 20rpx;
+        border-bottom: 1rpx solid #ccc;
+      }
+      .order_content {
+        display: flex;
+        navigator {
+          padding: 15rpx 0;
+          flex: 1;
+          text-align: center;
+          .iconfont {
+            font-size: 40rpx;
+            color: var(--theme-color);
+          }
+          .order_name {
+          }
+        }
+      }
+    }
+    .address_wrap {
+      margin-top: 30rpx;
+      background-color: #fff;
+      padding: 20rpx;
+    }
+    .app_info_wrap {
+      margin-top: 30rpx;
+      background-color: #fff;
+      .app_info_contact {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .app_info_item {
+        padding: 20rpx;
+      }
+      .app_info_item:not(:last-child) {
+        border-bottom: 1rpx solid #ccc;
+      }
+    }
+    .recommend_wrap {
+      margin-top: 30rpx;
+      background-color: #fff;
+      padding: 20rpx;
+    }
+  }
+}
