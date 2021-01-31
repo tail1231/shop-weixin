@@ -1,0 +1,13 @@
+/* components/UpImg/UpImg.wxss */
+.up_img_wrap {
+  position: relative;
+}
+.up_img_wrap image {
+  width: 90rpx;
+  height: 90rpx;
+}
+.up_img_wrap icon {
+  position: absolute;
+  right: -22rpx;
+  top: -22rpx;
+}
