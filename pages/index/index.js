@@ -18,7 +18,10 @@ Page({
       url: "/home/swiperdata",
     };
     request(params).then((res) => {
-      console.log("轮播图", res);
+      res.forEach(v => {
+        v.navigator_url = v.navigator_url.replace("main", "index")
+      })
+      console.log(res);
       this.setData({
         swiperList: res,
       });
@@ -48,14 +51,14 @@ Page({
       });
     });
   },
-  onReady: function () {},
-  onShow: function () {},
-  onHide: function () {},
-  onUnload: function () {},
-  onPullDownRefresh: function () {},
-  onReachBottom: function () {},
-  onShareAppMessage: function () {},
-  onPageScroll: function () {},
+  onReady: function () { },
+  onShow: function () { },
+  onHide: function () { },
+  onUnload: function () { },
+  onPullDownRefresh: function () { },
+  onReachBottom: function () { },
+  onShareAppMessage: function () { },
+  onPageScroll: function () { },
   //item(index,pagePath,text)
-  onTabItemTap: function (item) {},
+  onTabItemTap: function (item) { },
 });
